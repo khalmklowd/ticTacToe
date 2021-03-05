@@ -1,4 +1,4 @@
-
+//A work i progress.
 const game = (function() {
     
     const gameBoard = () => {
@@ -22,39 +22,39 @@ const game = (function() {
 game.gameBoard();
 
 document.getElementById("box0").addEventListener('click', function() {
-  document.getElementById("box0").style.backgroundColor = 'black';
+  document.getElementById("box0").style.backgroundImage="url(images/xForTic.svg)";
 })
 
 document.getElementById("box1").addEventListener('click', function() {
-  document.getElementById("box1").style.backgroundColor = 'black';
+  document.getElementById("box1").style.backgroundImage="url(images/xForTic.svg)";
 })
 
 document.getElementById("box2").addEventListener('click', function() {
-  document.getElementById("box2").style.backgroundColor = 'black';
+  document.getElementById("box2").style.backgroundImage="url(images/xForTic.svg)";
 })
 
 document.getElementById("box3").addEventListener('click', function() {
-  document.getElementById("box3").style.backgroundColor = 'black';
+  document.getElementById("box3").style.backgroundImage="url(images/xForTic.svg)";
 })
 
 document.getElementById("box4").addEventListener('click', function() {
-  document.getElementById("box4").style.backgroundColor = 'black';
+  document.getElementById("box4").style.backgroundImage="url(images/xForTic.svg)";
 })
 
 document.getElementById("box5").addEventListener('click', function() {
-  document.getElementById("box5").style.backgroundColor = 'black';
+  document.getElementById("box5").style.backgroundImage="url(images/xForTic.svg)";
 })
 
 document.getElementById("box6").addEventListener('click', function() {
-  document.getElementById("box6").style.backgroundColor = 'black';
+  document.getElementById("box6").style.backgroundImage="url(images/xForTic.svg)";
 })
 
 document.getElementById("box7").addEventListener('click', function() {
-  document.getElementById("box7").style.backgroundColor = 'black';
+  document.getElementById("box7").style.backgroundImage="url(images/xForTic.svg)";
 })
 
 document.getElementById("box8").addEventListener('click', function() {
-  document.getElementById("box8").style.backgroundColor = 'black';
+  document.getElementById("box8").style.backgroundImage="url(images/xForTic.svg)";
 })
 
 const documentMock = (() => ({
