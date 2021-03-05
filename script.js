@@ -1,6 +1,6 @@
-//A work i progress.
+//A work in progress.
 const game = (function() {
-    
+    // Create gameboard with 3x3 grid
     const gameBoard = () => {
         let board = document.createElement('DIV');
         x = 0;
@@ -21,41 +21,121 @@ const game = (function() {
 
 game.gameBoard();
 
-document.getElementById("box0").addEventListener('click', function() {
-  document.getElementById("box0").style.backgroundImage="url(images/xForTic.svg)";
-})
+// Add event listeners and creates images and player turns.
+const gamePlay = (function() {
+  let i = 2;
 
-document.getElementById("box1").addEventListener('click', function() {
-  document.getElementById("box1").style.backgroundImage="url(images/xForTic.svg)";
-})
+  document.getElementById("box0").addEventListener('click', function() {
 
-document.getElementById("box2").addEventListener('click', function() {
-  document.getElementById("box2").style.backgroundImage="url(images/xForTic.svg)";
-})
+      if (i % 2 == 0) {
+        document.getElementById("box0").style.backgroundImage="url(images/xForTic.svg)";
+        }
+      else {
+        document.getElementById("box0").style.backgroundImage="url(images/blueO.jpg)";
+      }
+      i += 1;
+    
+  })
 
-document.getElementById("box3").addEventListener('click', function() {
-  document.getElementById("box3").style.backgroundImage="url(images/xForTic.svg)";
-})
+  document.getElementById("box1").addEventListener('click', function() {
 
-document.getElementById("box4").addEventListener('click', function() {
-  document.getElementById("box4").style.backgroundImage="url(images/xForTic.svg)";
-})
+      if (i % 2 == 0) {
+        document.getElementById("box1").style.backgroundImage="url(images/xForTic.svg)";
+          
+      }
+        else {
+          document.getElementById("box1").style.backgroundImage="url(images/blueO.jpg)";
+        
+        }
+        i += 1;
+        
+    
+  })
 
-document.getElementById("box5").addEventListener('click', function() {
-  document.getElementById("box5").style.backgroundImage="url(images/xForTic.svg)";
-})
+  document.getElementById("box2").addEventListener('click', function() {
+  
+      if (i%2 == 0) {
+        document.getElementById("box2").style.backgroundImage="url(images/xForTic.svg)";
+        }
+      else {
+        document.getElementById("box2").style.backgroundImage="url(images/blueO.jpg)";
+        }
+        i += 1;
+    
+  })
 
-document.getElementById("box6").addEventListener('click', function() {
-  document.getElementById("box6").style.backgroundImage="url(images/xForTic.svg)";
-})
+  document.getElementById("box3").addEventListener('click', function() {
+    
+      if (i%2 == 0) {
+        document.getElementById("box3").style.backgroundImage="url(images/xForTic.svg)";
+        }
+        else {
+          document.getElementById("box3").style.backgroundImage="url(images/blueO.jpg)";
+        }
+        i += 1;
+    
+  })
 
-document.getElementById("box7").addEventListener('click', function() {
-  document.getElementById("box7").style.backgroundImage="url(images/xForTic.svg)";
-})
+  document.getElementById("box4").addEventListener('click', function() {
+    
+      if (i%2 == 0) {
+        document.getElementById("box4").style.backgroundImage="url(images/xForTic.svg)";
+        }
+        else {
+          document.getElementById("box4").style.backgroundImage="url(images/blueO.jpg)";
+        }
+        i += 1;
+    
+  })
 
-document.getElementById("box8").addEventListener('click', function() {
-  document.getElementById("box8").style.backgroundImage="url(images/xForTic.svg)";
-})
+  document.getElementById("box5").addEventListener('click', function() {
+    
+      if (i%2 == 0) {
+        document.getElementById("box5").style.backgroundImage="url(images/xForTic.svg)";
+        }
+        else {
+          document.getElementById("box5").style.backgroundImage="url(images/blueO.jpg)";
+        }
+        i += 1;
+    
+  })
+
+  document.getElementById("box6").addEventListener('click', function() {
+    
+      if (i%2 == 0) {
+        document.getElementById("box6").style.backgroundImage="url(images/xForTic.svg)";
+        }
+        else {
+          document.getElementById("box6").style.backgroundImage="url(images/blueO.jpg)";
+        }
+        i += 1;
+    
+  })
+
+  document.getElementById("box7").addEventListener('click', function() {
+    
+      if (i%2 == 0) {
+        document.getElementById("box7").style.backgroundImage="url(images/xForTic.svg)";
+        }
+        else {
+          document.getElementById("box7").style.backgroundImage="url(images/blueO.jpg)";
+        }
+        i += 1;
+    
+  })
+
+  document.getElementById("box8").addEventListener('click', function() {
+    
+      if (i%2 == 0) {
+        document.getElementById("box8").style.backgroundImage="url(images/xForTic.svg)";
+        }
+        else {
+          document.getElementById("box8").style.backgroundImage="url(images/blueO.jpg)";
+        }
+        i += 1;
+    
+  })
+  }())
 
 const documentMock = (() => ({
     querySelector: (selector) => ({
