@@ -1,4 +1,7 @@
 /* a comment*/
+#head {
+    text-align: center;
+}
 #box0 {
     border-style: solid;
     border-width:5px;
@@ -72,4 +75,5 @@ div {
     background-color: black;
     width: 500px;
     height: 500px;
+    margin-left: 30%;
 }
