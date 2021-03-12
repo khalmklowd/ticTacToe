@@ -42,6 +42,7 @@ const stoppit = (function() {
       document.getElementById(`box${i}`).removeEventListener("click", gamePlay);
     }
 }())
+
   // something for me to reference.
 const documentMock = (() => ({
     querySelector: (selector) => ({
