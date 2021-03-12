@@ -14,15 +14,15 @@ const game = (function() {
     
     //function to listen for clicks and switch turns.
     const turn = function(a) {
-      document.getElementById(`box${a}`).addEventListener('click', function() {
+      document.getElementById(`box${a}`).addEventListener('click', () => {
           if (i % 2 == 0) {
-            document.getElementById(`box${a}`).style.backgroundImage="url(images/xForTic.svg)";
-            }
+            document.getElementById(`box${a}`).style.backgroundImage = "url(images/xForTic.svg)";
+          }
           else {
-            document.getElementById(`box${a}`).style.backgroundImage="url(images/blueO.jpg)";
+            document.getElementById(`box${a}`).style.backgroundImage = "url(images/blueO.jpg)";
           }
           i += 1;
-})
+        })
 }
     return {turn, gameBoard}
 })();
@@ -31,19 +31,17 @@ game.gameBoard();
 
 // Add turn function to each div in the game board.
 const gamePlay = (function() {
-
-  document.getElementById("box0").onclick = game.turn(0);
-  document.getElementById("box1").onclick = game.turn(1);
-  document.getElementById("box2").onclick = game.turn(2);
-  document.getElementById("box3").onclick = game.turn(3);
-  document.getElementById("box4").onclick = game.turn(4);
-  document.getElementById("box5").onclick = game.turn(5);
-  document.getElementById("box6").onclick = game.turn(6);
-  document.getElementById("box7").onclick = game.turn(7);
-  document.getElementById("box8").onclick = game.turn(8);
+    i = 0;
+    for (i = 0; i <= 8; i++){
+      document.getElementById(`box${i}`).onclick = game.turn(i);
+    }
   }())
-
-
+const stoppit = (function() {
+    i = 0;
+    for (i = 0; i <= 8; i++){
+      document.getElementById(`box${i}`).removeEventListener("click", gamePlay);
+    }
+}())
   // something for me to reference.
 const documentMock = (() => ({
     querySelector: (selector) => ({
