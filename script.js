@@ -22,120 +22,49 @@ const game = (function() {
         if (i % 2 == 0) {
           document.getElementById(`box${a}`).style.backgroundImage = "url(images/xForTic.svg)";
           
-          const xWins = (function() {
-            winner += `${a}, `;
-            console.log(winner);
-            if (winner.includes('0') && winner.includes('1') && winner.includes('2')) {
-              console.log("X Wins!")
+          const xWins = function(n, b, c) {
+            winnerO += `${a}, `;
+            if (winnerO.includes(n) && winnerO.includes(b) && winnerO.includes(c)) {
               document.getElementById("head").innerHTML = "<h1><b>X WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 3000)
-            }
-            if (winner.includes('0') && winner.includes('3') && winner.includes('6')) {
-              console.log('X Wins!');
-              console.log("X Wins!")
-              document.getElementById("head").innerHTML = "<h1><b>X WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 3000)
-            }  
-            if (winner.includes('0') && winner.includes('4') && winner.includes('8')) {
-              console.log('X Wins!');
-              console.log("X Wins!")
-              document.getElementById("head").innerHTML = "<h1><b>X WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 3000)
-            }
-            if (winner.includes('3') && winner.includes('4') && winner.includes('5')) {
-              console.log('X Wins!');
-              console.log("X Wins!")
-              document.getElementById("head").innerHTML = "<h1><b>X WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 3000)
-            }
-            if (winner.includes('6') && winner.includes('7') && winner.includes('8')) {
-              console.log('X Wins!');
-              console.log("X Wins!")
-              document.getElementById("head").innerHTML = "<h1><b>X WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 3000)
-            }
-            if (winner.includes('1') && winner.includes('4') && winner.includes('7')) {
-              console.log('X Wins!');
-              console.log("X Wins!")
-              document.getElementById("head").innerHTML = "<h1><b>X WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 3000)
-            }
-            if (winner.includes('2') && winner.includes('5') && winner.includes('8')) {
-              console.log('X Wins!');
-              console.log("X Wins!")
-              document.getElementById("head").innerHTML = "<h1><b>X WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 3000)
-            }
-            if (winner.includes('2') && winner.includes('4') && winner.includes('6')) {
-              console.log('X Wins!');
-              console.log("X Wins!")
-              document.getElementById("head").innerHTML = "<h1><b>X WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 3000)
-            }
-          }());
+              setTimeout(function () { alert("New Game?"); location.reload(); }, 1000)
+            }           
+          };
+          xWins(0, 1, 2);
+          xWins(0, 3, 6);
+          xWins(0, 4, 8);
+          xWins(3, 4, 5);
+          xWins(6, 7, 8);
+          xWins(1, 4, 7);
+          xWins(2, 5, 8);
+          xWins(2, 4, 6);
+
         }
         else {
-          document.getElementById(`box${a}`).style.backgroundImage = "url(images/blueO.jpg)";
-        
-          const oWins = (function() {
+          document.getElementById(`box${a}`).style.backgroundImage = "url(images/blueO.jpg)"; 
+          const oWins = function(n, b, c) {
             winnerO += `${a}, `;
-            console.log(winnerO);
-            if (winnerO.includes('0') && winnerO.includes('1') && winnerO.includes('2')) {
-              console.log('O Wins!');
-              window.location.href = "https://www.youtube.com/watch?v=U9DyHthJ6LA";
+            if (winnerO.includes(n) && winnerO.includes(b) && winnerO.includes(c)) {
               document.getElementById("head").innerHTML = "<h1><b>O WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 3000)
-            }
-            if (winnerO.includes('0') && winnerO.includes('3') && winnerO.includes('6')) {
-              console.log('O Wins!');
-              document.getElementById("head").innerHTML = "<h1><b>O WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 3000)
-            }  
-            if (winnerO.includes('0') && winnerO.includes('4') && winnerO.includes('8')) {
-              console.log('O Wins!');
-              document.getElementById("head").innerHTML = "<h1><b>O WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 3000)
-            }
-            if (winnerO.includes('3') && winnerO.includes('4') && winnerO.includes('5')) {
-              console.log('O Wins!');
-              document.getElementById("head").innerHTML = "<h1><b>O WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 3000)
-            }
-            if (winnerO.includes('6') && winnerO.includes('7') && winnerO.includes('8')) {
-              console.log('O Wins!');
-              document.getElementById("head").innerHTML = "<h1><b>O WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 3000)
-            }
-            if (winnerO.includes('1') && winnerO.includes('4') && winnerO.includes('7')) {
-              console.log('O Wins!');
-              document.getElementById("head").innerHTML = "<h1><b>O WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 3000)
-            }
-            if (winnerO.includes('2') && winnerO.includes('5') && winnerO.includes('8')) {
-              console.log('O Wins!');
-              document.getElementById("head").innerHTML = "<h1><b>O WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 3000)
-            }
-            if (winnerO.includes('2') && winnerO.includes('4') && winnerO.includes('6')) {
-              console.log('O Wins!');
-              document.getElementById("head").innerHTML = "<h1><b>O WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 3000)
-            }
-          }());
+              setTimeout(function () { alert("New Game?"); location.reload(); }, 1000)
+            }           
+          };
+          oWins(0, 1, 2);
+          oWins(0, 3, 6);
+          oWins(0, 4, 8);
+          oWins(3, 4, 5);
+          oWins(6, 7, 8);
+          oWins(1, 4, 7);
+          oWins(2, 5, 8);
+          oWins(2, 4, 6);
         }
           i++;
         })
-      
       }
-
-      
-
     return {turn, gameBoard}
 })();
 
+//Initialize game
 game.gameBoard();
-
-
 
 // Add turn function to each div in the game board.
 const gamePlay = (function() {
@@ -143,34 +72,7 @@ const gamePlay = (function() {
     let box = document.getElementById(`box${i}`).style.backgrounImage = "url(images/xForTic.svg)";
     let box1 = document.getElementById(`box${i}`).style.backgrounImage = "url(images/blueO.jpg)";
     for (i = 0; i <= 8; i++){
-      document.getElementById(`box${i}`).mousedown = game.turn(i);
-    
+      document.getElementById(`box${i}`).mousedown = game.turn(i);    
   }
   }())
-
-
-  // something for me to reference.
-const documentMock = (() => ({
-    querySelector: (selector) => ({
-      innerHTML: null,
-    }),
-  }))();
-  
-  const Formatter = (function(doc) {
-    const log = (message) => console.log(`[${Date.now()}] Logger: ${message}`);
-  
-    const makeUppercase = (text) => {
-      log("Making uppercase");
-      return text.toUpperCase();
-    };
-  
-    const writeToDOM = (selector, message) => {
-      doc.querySelector(selector).innerHTML = message;
-    }
-  
-    return {
-      makeUppercase,
-      writeToDOM,
-    }
-  })(document || documentMock);
 
