@@ -77,7 +77,7 @@ const game = (function() {
         else {
           document.getElementById(`box${a}`).style.backgroundImage = "url(images/blueO.jpg)";
         
-          const yWins = (function() {
+          const oWins = (function() {
             winnerO += `${a}, `;
             console.log(winnerO);
             if (winnerO.includes('0') && winnerO.includes('1') && winnerO.includes('2')) {
