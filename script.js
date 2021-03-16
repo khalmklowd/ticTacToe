@@ -1,10 +1,12 @@
-//A work in progress.
+//Main game function.
 const game = (function() {
   let i = 2;     
   let winner = '';  
   let winnerO = '';
+  let b = 0;
+
   // Create gameboard with 3x3 grid
-    const gameBoard = () => {
+  const gameBoard = () => {
         let board = document.createElement('DIV');
         x = 0;
         for (x = 0; x < 9; x++) {
@@ -13,22 +15,22 @@ const game = (function() {
         }               
     };  
     
-    //function to listen for clicks and switch turns.
-    const turn = function(a) {
-      
-      
-      document.getElementById(`box${a}`).addEventListener('mousedown', () => {
-        
+  //function to listen for clicks and switch turns.
+  const turn = function(a) {
+
+    //for use with removeEvenetListener.  
+      const clickIt = function() {        
         if (i % 2 == 0) {
           document.getElementById(`box${a}`).style.backgroundImage = "url(images/xForTic.svg)";
           
           const xWins = function(n, b, c) {
-            winnerO += `${a}, `;
-            if (winnerO.includes(n) && winnerO.includes(b) && winnerO.includes(c)) {
+            winner += `${a}, `;
+            if (winner.includes(n) && winner.includes(b) && winner.includes(c)) {
+              b += 1;
               document.getElementById("head").innerHTML = "<h1><b>X WINS!</b></h1>";
               setTimeout(function () { alert("New Game?"); location.reload(); }, 1000)
             }           
-          };
+          };     
           xWins(0, 1, 2);
           xWins(0, 3, 6);
           xWins(0, 4, 8);
@@ -37,16 +39,18 @@ const game = (function() {
           xWins(1, 4, 7);
           xWins(2, 5, 8);
           xWins(2, 4, 6);
+        }    
 
-        }
-        else {
+        else if (i % 2 != 0) {
           document.getElementById(`box${a}`).style.backgroundImage = "url(images/blueO.jpg)"; 
+          
           const oWins = function(n, b, c) {
             winnerO += `${a}, `;
             if (winnerO.includes(n) && winnerO.includes(b) && winnerO.includes(c)) {
+              b += 1;
               document.getElementById("head").innerHTML = "<h1><b>O WINS!</b></h1>";
-              setTimeout(function () { alert("New Game?"); location.reload(); }, 1000)
-            }           
+              setTimeout(function () { alert("New Game?"); location.reload(); }, 1000);
+            }     
           };
           oWins(0, 1, 2);
           oWins(0, 3, 6);
@@ -57,8 +61,16 @@ const game = (function() {
           oWins(2, 5, 8);
           oWins(2, 4, 6);
         }
-          i++;
-        })
+
+        if (i == 10 && b == 0) {
+          document.getElementById("head").innerHTML = "<h1><b>It's a tie!</b></h1>";
+          setTimeout(function () { alert("New Game?"); location.reload(); }, 1000)  
+        };    
+        document.getElementById(`box${a}`).removeEventListener('mousedown', clickIt);
+        i++;
+        }
+
+        document.getElementById(`box${a}`).addEventListener('mousedown', clickIt);
       }
     return {turn, gameBoard}
 })();
@@ -69,8 +81,6 @@ game.gameBoard();
 // Add turn function to each div in the game board.
 const gamePlay = (function() {
     let i = 0;
-    let box = document.getElementById(`box${i}`).style.backgrounImage = "url(images/xForTic.svg)";
-    let box1 = document.getElementById(`box${i}`).style.backgrounImage = "url(images/blueO.jpg)";
     for (i = 0; i <= 8; i++){
       document.getElementById(`box${i}`).mousedown = game.turn(i);    
   }
