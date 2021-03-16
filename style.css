@@ -1,3 +1,5 @@
+
+
 /* a comment*/
 #head {
     text-align: center;
@@ -6,6 +8,7 @@
     border-style: solid;
     border-width:5px;
     border-color: black;
+    background-color: #2196F3;
 }
 #box0:hover, #box1:hover, #box2:hover, 
 #box3:hover, #box4:hover, #box5:hover, 
@@ -18,54 +21,62 @@
     border-style: solid;
     border-width:5px;
     border-color: black;
+    background-color: #2196F3;
 }
 
 #box2 {
     border-style: solid;
     border-width:5px;
     border-color: black;
+    background-color: #2196F3;
 }
 
 #box3 {
     border-style: solid;
     border-width:5px;
     border-color: black;
+    background-color: #2196F3;
 }
 
 #box4 {
     border-style: solid;
     border-width:5px;
     border-color: black;
+    background-color: #2196F3;
 }
 
 #box5 {
     border-style: solid;
     border-width:5px;
     border-color: black;
+    background-color: #2196F3;
 }
 
 #box6 {
     border-style: solid;
     border-width:5px;
     border-color: black;
+    background-color: #2196F3;
 }
 
 #box7 {
     border-style: solid;
     border-width:5px;
     border-color: black;
+    background-color: #2196F3;
 }
 
 #box8 {
     border-style: solid;
     border-width:5px;
     border-color: black;
+    background-color: #2196F3;
 }
 
 div {
     display: inline-grid;
     grid-template-columns: auto auto auto;
-    background-color: #2196F3;
+    
     padding: 10px;
   }
 
@@ -77,3 +88,9 @@ div {
     height: 500px;
     margin-left: 30%;
 }
+
+#player1, #player2 {
+    text-align: left;
+    margin-top: -2.5%;
+}
+
