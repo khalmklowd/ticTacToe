@@ -4,7 +4,21 @@ const game = (function() {
   let winner = '';  
   let winnerO = '';
   let b = 0;
+  
 
+  //Ask for player names and present them onscreen.
+  const playerName = (function() {
+    let playera = prompt("First players name?");
+    let playerb = prompt("Second players name?");
+    let first = document.createElement("DIV");
+    let second = document.createElement("DIV");
+    first.innerHTML = `${playera} is X.`;
+    second.innerHTML = `${playerb} is O.`
+    document.getElementById('player1').appendChild(first);
+    document.getElementById('player2').appendChild(second);
+    return {playera, playerb}
+  }());
+  
   // Create gameboard with 3x3 grid
   const gameBoard = () => {
         let board = document.createElement('DIV');
@@ -27,7 +41,7 @@ const game = (function() {
             winner += `${a}, `;
             if (winner.includes(n) && winner.includes(b) && winner.includes(c)) {
               b += 1;
-              document.getElementById("head").innerHTML = "<h1><b>X WINS!</b></h1>";
+              document.getElementById("head").innerHTML = `<h1><b>${playerName.playera} wins!</b></h1>`;
               setTimeout(function () { alert("New Game?"); location.reload(); }, 1000)
             }           
           };     
@@ -48,7 +62,7 @@ const game = (function() {
             winnerO += `${a}, `;
             if (winnerO.includes(n) && winnerO.includes(b) && winnerO.includes(c)) {
               b += 1;
-              document.getElementById("head").innerHTML = "<h1><b>O WINS!</b></h1>";
+              document.getElementById("head").innerHTML = `<h1><b>${playerName.playerb} WINS!</b></h1>`;
               setTimeout(function () { alert("New Game?"); location.reload(); }, 1000);
             }     
           };
